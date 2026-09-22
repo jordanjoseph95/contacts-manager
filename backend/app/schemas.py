@@ -13,8 +13,7 @@ class GroupCreate(GroupBase):
 class Group(GroupBase):
     id: int
 
-    class Config:
-        from_attributes = True
+    cmodel_config = {"from_attributes": True}
 
 
 class PersonBase(BaseModel):
@@ -31,5 +30,4 @@ class PersonCreate(PersonBase):
 class Person(PersonBase):
     id: int
 
-    class Config:
-        from_attributes = True
+    model_config = {"from_attributes": True}
