@@ -1,5 +1,5 @@
 def test_create_group(client):
-    response = client.post("/groups", json={"name": "Friends"})
+    response = client.post("/groups", json={"name": "Friens"})
     assert response.status_code == 200
     data = response.json()
     assert data["name"] == "Friends"
