@@ -43,5 +43,6 @@ jobs:
           DB_PASSWORD: root
           DB_HOST: 127.0.0.1
           DB_PORT: 3306
+          DB_NAME: contacts_test
           DB_TEST_NAME: contacts_test
         run: pytest
