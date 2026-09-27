@@ -15,6 +15,8 @@ function App() {
     setGroups(groupsData);
   }
 
+  app = 
+
   useEffect(() => {
     loadData();
   }, []);
