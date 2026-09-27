@@ -1,0 +1,28 @@
+name: Lint
+
+on:
+  pull_request:
+    branches: [develop, main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+      
+      - name: Install dependencies
+        working-directory: ./frontend
+        run: npm install
+
+      - name: Run ESLint with Reviewdog
+        uses: reviewdog/action-eslint@2fee6dd72a5419ff4113f694e2068d2a03bb35dd # v1.33.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review # Change reporter.
+          eslint_flags: "frontend/src"
