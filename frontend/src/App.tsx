@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getPeople, getGroups, createPerson, deletePerson, type Person, type Group } from "./api";
 
+const unusedTestVariable = "trigger lint warning";
+
 function App() {
   const [people, setPeople] = useState<Person[]>([]);
   const [groups, setGroups] = useState<Group[]>([]);
