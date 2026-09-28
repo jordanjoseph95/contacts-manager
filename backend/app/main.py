@@ -8,9 +8,16 @@ from fastapi import Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.database import get_db
 from app import crud, schemas
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Contacts Manager")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 @app.get("/health")
 def health_check():

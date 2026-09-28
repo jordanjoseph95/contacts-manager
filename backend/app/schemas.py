@@ -13,7 +13,7 @@ class GroupCreate(GroupBase):
 class Group(GroupBase):
     id: int
 
-    cmodel_config = {"from_attributes": True}
+    model_config = {"from_attributes": True}
 
 
 class PersonBase(BaseModel):
